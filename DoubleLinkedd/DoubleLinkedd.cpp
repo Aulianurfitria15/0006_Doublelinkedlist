@@ -72,3 +72,15 @@ void addNode()
             START = newNode;
         }
     }
+
+    bool search(int rollNo, Node * *previous, Node * *current)
+    {
+        *previous = NULL;
+        *current = START;
+        while (*current != NULL && (*current)->noMhs != rollNo)
+        {
+            *previous = NULL;
+            *current = START;
+        }
+        return (*current != NULL);
+    }
