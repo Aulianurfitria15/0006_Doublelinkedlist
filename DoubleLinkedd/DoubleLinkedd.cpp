@@ -49,12 +49,6 @@ void addNode()
             current = current->next;  // step 1.e: move the current to the next node
         }
 
-        while (current != NULL && current->noMhs < newNode->noMhs)
-        {                             // step 1.c: traverse the list to find the correct position
-            previous = current;       // step 1.d: move the previous to the current node
-            current = current->next;  // step 1.e: move the current to the next node
-        }
-
         newNode->next = current;   // step 4: make the next field of the new node point to current
         newNode->prev = previous;  // step 5: mkae the previous field of the node point the previous
 
@@ -72,15 +66,16 @@ void addNode()
             START = newNode;
         }
     }
+}
 
-    bool search(int rollNo, Node * *previous, Node * *current)
+bool search(int rollNo, Node** previous, Node** current)
+{
+    *previous = NULL;
+    *current = START;
+    while (*current != NULL && (*current)->noMhs != rollNo)
     {
         *previous = NULL;
         *current = START;
-        while (*current != NULL && (*current)->noMhs != rollNo)
-        {
-            *previous = NULL;
-            *current = START;
-        }
-        return (*current != NULL);
     }
+    return (*current != NULL);
+}
