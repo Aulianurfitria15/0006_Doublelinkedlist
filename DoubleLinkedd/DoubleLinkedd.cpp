@@ -221,3 +221,12 @@ int main()
             case '3':
                 traverse();
                 break;
+            case '4':
+                revtraverse();
+                break;
+            case '5':
+                searchData();
+                break;
+            case '6':
+                return 0;
+                break;
