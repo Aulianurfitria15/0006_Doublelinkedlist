@@ -230,3 +230,8 @@ int main()
             case '6':
                 return 0;
                 break;
+            default:
+                cout << "\nInvalid option" << endl;
+                break;
+            }
+        }
